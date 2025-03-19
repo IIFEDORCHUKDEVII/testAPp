@@ -4,7 +4,7 @@ import {createAction, createSlice, type PayloadAction} from '@reduxjs/toolkit';
 
 import {Weathers, List} from '../../service/weather/weather.types';
 export interface WeatherState {
-  data: Weathers['data']['list'];
+  data: List[];
   loading: boolean;
   error: string;
 }

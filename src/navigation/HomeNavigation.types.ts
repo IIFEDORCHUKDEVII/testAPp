@@ -1,12 +1,17 @@
+/**
+ * Types for Home Navigation
+ */
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {DateData} from 'react-native-calendars';
-type HomeStackParamList = {
+/**
+ * Types for Home Navigation
+ */
+export type HomeStackParamList = {
   HomeScreen: undefined;
-  DayWeatherScreen: {day: DateData};
 };
-type HomeStackProps = NativeStackScreenProps<HomeStackParamList>;
-type DayWeatherScreenProps = NativeStackScreenProps<
-  HomeStackParamList,
-  'DayWeatherScreen'
->;
-export type {HomeStackProps, HomeStackParamList, DayWeatherScreenProps};
+/**
+ * Types for Home Navigation
+ */
+export type HomeStackProps = NativeStackScreenProps<HomeStackParamList>;
+/**
+ * Types for DayWeatherScreen
+ */

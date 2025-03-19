@@ -15,6 +15,11 @@ const useWeatherService = (): Readonly<WeatherServiceOperators> => {
   return {
     weathers: useAppSelector(selectWeathers),
 
+    /**
+     * Fetches all weather data from the API.
+     * - Dispatches the action to update the state with the loading state.
+     * - Dispatches the action to fetch the weather data.
+     */
     fetchAllWeather: useCallback(() => {
       dispatch(weatherActions.fetchAllIsLoading());
       dispatch(weatherActions.fetchAll());
@@ -23,3 +28,4 @@ const useWeatherService = (): Readonly<WeatherServiceOperators> => {
 };
 
 export default useWeatherService;
+

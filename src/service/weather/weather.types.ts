@@ -1,18 +1,17 @@
- 
- 
+export interface Weathers {
+  data: {
+    cod: string;
+    message: number;
+    cnt: number;
+    list: Weather[];
+    city: City;
+  };
+}
 
-export type Weathers ={
-data:{  cod: string;
-  message: number;
-  cnt: number;
-  list: List[];
-  city: City;
-}}
-
-interface City {
+export interface City {
   id: number;
   name: string;
-  coord: Coord;
+  coordinates: Coordinates;
   country: string;
   population: number;
   timezone: number;
@@ -20,57 +19,60 @@ interface City {
   sunset: number;
 }
 
-interface Coord {
-  lat: number;
-  lon: number;
+export interface Coordinates {
+  latitude: number;
+  longitude: number;
 }
 
 export interface List {
-  dt: number;
+  dt_txt: any;
+  date: number;
   main: Main;
   weather: Weather[];
   clouds: Clouds;
   wind: Wind;
   visibility: number;
-  pop: number;
+  probabilityOfPrecipitation: number;
   rain?: Rain;
-  sys: Sys;
-  dt_txt: string;
+  system: System;
+  dateString: string;
 }
 
-interface Sys {
+export interface System {
   pod: string;
 }
 
-interface Rain {
-  '3h': number;
+export interface Rain {
+  precipitationVolumeForLast3Hours: number;
 }
 
-interface Wind {
+export interface Wind {
   speed: number;
-  deg: number;
+  direction: number;
   gust: number;
 }
 
-interface Clouds {
+export interface Clouds {
   all: number;
 }
 
 interface Weather {
+  dt_txt: any;
   id: number;
   main: string;
   description: string;
   icon: string;
 }
 
-interface Main {
-  temp: number;
-  feels_like: number;
-  temp_min: number;
-  temp_max: number;
+export interface Main {
+  temp: any;
+  temperature: number;
+  feelsLikeTemperature: number;
+  minTemperature: number;
+  maxTemperature: number;
   pressure: number;
-  sea_level: number;
-  grnd_level: number;
+  seaLevel: number;
+  groundLevel: number;
   humidity: number;
-  temp_kf: number;
+  temperatureDifference: number;
 }
